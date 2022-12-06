@@ -6,15 +6,12 @@
 <%
 	//로그인된 아이디를 읽어온다(로그인을 하지 않았으면 null 이다)
 	String id=(String)session.getAttribute("id");
-
 	//한 페이지에 몇개씩 표시할 것인지
 	final int PAGE_ROW_COUNT=5;
 	//하단 페이지를 몇개씩 표시할 것인지
 	final int PAGE_DISPLAY_COUNT=5;
-
 	//보여줄 페이지의 번호를 일단 1이라고 초기값 지정
 	int pageNum=1;
-
 	//페이지 번호가 파라미터로 전달되는지 읽어와 본다.
 	String strPageNum=request.getParameter("pageNum");
 	//만일 페이지 번호가 파라미터로 넘어 온다면
@@ -59,6 +56,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
+	<%-- 페이지를 include 시킬때는 WEB-INF 폴더에 있는 페이지도 include 가능하다 --%>
+	<jsp:include page="/WEB-INF/include/navbar.jsp">
+		<jsp:param value="file" name="thisPage"/>
+	</jsp:include>
 	<div class="container">
 		<a href="${pageContext.request.contextPath }/file/private/upload_form.jsp">업로드 하기</a>
 		<h3>자료실 목록 보기</h3>
@@ -133,14 +134,3 @@
 	</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-

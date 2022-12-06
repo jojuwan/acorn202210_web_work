@@ -18,15 +18,15 @@
 	          			<a class="nav-link ${param.thisPage eq 'file' ? 'active' : '' }" href="${pageContext.request.contextPath}/file/list.jsp">자료실</a>
 	        		</li>
 	        		<li class="nav-item">
-	          			<a class="nav-link ${param.thisPage eq 'cafe' ? 'active' : '' }" href="${pageContext.request.contextPath}/cafe/list.jsp">카페</a>
+	          			<a class="nav-link ${param.thisPage eq 'cafe' ? 'active' : '' }" href="${pageContext.request.contextPath}/cafe/list2.jsp">카페</a>
 	        		</li>
 	     			<li class="nav-item">
 	          			<a class="nav-link ${param.thisPage eq 'gallery' ? 'active' : '' }" href="${pageContext.request.contextPath}/gallery/list.jsp">겔러리</a>
 	        		</li>
       			</ul>
-      			<%--
-      				when test="${empty id}"
-      				
+      			<%-- 
+      				when test="${empty id }"
+      			
       				위의 표현식은 session 영역에 만일 id 가 비어 있으면 (로그인을 하지 않았으면) 
       			--%>
       			<c:choose>
@@ -44,14 +44,3 @@
     		</div>
 		</div>
 	</nav>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
